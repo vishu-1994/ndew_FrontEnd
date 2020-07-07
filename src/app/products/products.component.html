@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container-fluid ">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" [routerLink]="['/home']">
+        <strong>NDEW</strong>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/registration']">Customer Registration</a></li>
+        <li><a [routerLink]="['/customerDetails']">Customer Details</a></li>
+        <li><a [routerLink]="['/allCustomersData']">All Customers</a></li>
+      </ul>
+      <button class="btn btn-primary navbar-btn navbar-right" [routerLink]="['/login']">Logout</button>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="container-fluid">
+  <h1>Product Details Form</h1>
+  <form #productForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <div class="form-group">
+      <label>Product Name</label>
+      <input type="text" #productName="ngModel" [class.is-invalid]="productName.invalid && productName.touched" required class="form-control" name="productName" [(ngModel)]="productModel.productName">
+      <small class="text-danger" [class.d-none]="productName.valid || productName.untouched">Product Name is required</small>
+    </div>
+
+    <div class="form-group">
+      <label>Quantity</label>
+      <input type="text" #quantity="ngModel" [class.is-invalid]="quantity.invalid && quantity.touched" required class="form-control" name="quantity" [(ngModel)]="productModel.quantity">
+      <small class="text-danger" [class.d-none]="quantity.valid || quantity.untouched">Product Name is required</small>
+    </div>
+
+    <div class="form-group">
+      <label>Delivery Date</label>
+      <input type="text" #deliveryDate="ngModel" [class.is-invalid]="deliveryDate.invalid && deliveryDate.touched" required class="form-control" name="deliveryDate" [(ngModel)]="productModel.deliveryDate">
+      <small class="text-danger" [class.d-none]="deliveryDate.valid || deliveryDate.untouched">Product Name is required</small>
+    </div>
+
+    <div class="form-group">
+      <label>Customer Id</label>
+      <input type="text" class="form-control" value={{customerId}} disabled [(ngModel)]="productModel.customerId">
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="productForm.form.invalid">Submit</button>
+  </form>
+
+  <div class="panel-body" *ngIf="successMsg" align="center">
+    <div class="red">{{successMsg}}</div>
+  </div>
+</div>

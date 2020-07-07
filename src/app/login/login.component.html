@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h1>Login</h1>
+    <form #loginForm="ngForm" (ngSubmit)="login()">
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" [class.is-invalid]="phoneNo.invalid && phoneNo.touched" required class="form-control" name="phoneNo" [(ngModel)]="phoneNo">
+            <small class="text-danger" [class.d-none]="phoneNo.valid || phoneNo.untouched">Phone number is required</small>
+          </div>
+
+          <button class="btn btn-primary" type="submit" [disabled]="loginForm.form.invalid">Login</button>
+  </form>
+  </div>

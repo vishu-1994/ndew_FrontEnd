@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container-fluid ">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" [routerLink]="['/home']">
+        <strong>NDEW</strong>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <button class="btn btn-primary navbar-btn navbar-right" [routerLink]="['/home']">Logout</button>
+    </div>
+  </div>
+</nav>
+
+
+  <div class="row" style="margin-top: 40px;">
+    <div class="container">
+      <div class="panel-default" style="padding-top: 40px;">
+        <div class="panel-body">
+          <div class="col-sm-4">
+            <div class="panel panel-default">
+              <div class="panel-body" align="center">
+                <a routerLink="/registration">
+                  <i class="fa fa-user-plus fa-big"></i>
+                </a>
+                
+              </div>
+              <div class="panel-footer info" align="center">
+                <a [routerLink]="['/registration']">
+                  <h4>Customer Registration</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="panel panel-default">
+              <div class="panel-body" align="center">
+                <a [routerLink]="['/customerDetails']">
+                  <i class="fa fa-user fa-big"></i>
+                </a>
+              </div>
+              <div class="panel-footer info" align="center">
+                <a [routerLink]="['/customerDetails']">
+                  <h4>Customer Details</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="panel panel-default">
+              <div class="panel-body" align="center">
+                <a [routerLink]="['/allCustomersData']">
+                  <i class="fa fa-list fa-big"></i>
+                </a>
+              </div>
+              <div class="panel-footer info" align="center">
+                <a [routerLink]="['/allCustomersData']">
+                  <h4>All Customers</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
